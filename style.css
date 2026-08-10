@@ -721,3 +721,885 @@ a {
         gap: 15px;
     }
 }
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8fbff 0%,
+            #ffffff 100%
+        );
+
+    padding: 90px 30px 110px;
+}
+
+
+/* Background decoration */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: -250px;
+    right: -150px;
+
+    background: #dbeafe;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    opacity: 0.45;
+
+    pointer-events: none;
+}
+
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    bottom: -250px;
+    left: -150px;
+
+    background: #e0e7ff;
+
+    border-radius: 50%;
+
+    filter: blur(90px);
+
+    opacity: 0.35;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   HERO CONTAINER
+========================================= */
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1240px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        0.9fr;
+
+    align-items: center;
+
+    gap: 80px;
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
+    max-width: 650px;
+}
+
+
+/* Badge */
+
+.hero-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 13px;
+
+    margin-bottom: 22px;
+
+    background: #eff6ff;
+
+    border: 1px solid #dbeafe;
+
+    border-radius: 50px;
+
+    color: #2563eb;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.hero-badge i {
+    font-size: 12px;
+}
+
+
+/* Heading */
+
+.hero-content h1 {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: clamp(42px, 5vw, 64px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2.5px;
+
+    font-weight: 800;
+}
+
+.hero-content h1 span {
+    display: block;
+
+    color: #2563eb;
+}
+
+
+/* Description */
+
+.hero-description {
+    max-width: 590px;
+
+    margin: 25px 0 30px;
+
+    color: #64748b;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   HERO BUTTONS
+========================================= */
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 13px 20px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* Primary */
+
+.primary-btn {
+    background: #2563eb;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.20);
+}
+
+.primary-btn:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(37, 99, 235, 0.28);
+}
+
+
+/* Secondary */
+
+.secondary-btn {
+    background: #ffffff;
+
+    border: 1px solid #dbe2ea;
+
+    color: #334155;
+}
+
+.secondary-btn:hover {
+    border-color: #93c5fd;
+
+    color: #2563eb;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(15, 23, 42, 0.07);
+}
+
+
+/* =========================================
+   SUPPORTED FORMATS
+========================================= */
+
+.supported-formats {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-top: 30px;
+}
+
+.supported-formats > span {
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.format {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 6px 9px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 6px;
+
+    color: #64748b;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+.format i {
+    color: #2563eb;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   HERO VISUAL
+========================================= */
+
+.hero-visual {
+    position: relative;
+
+    min-height: 500px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* =========================================
+   CONVERTER CARD
+========================================= */
+
+.hero-card {
+    width: 100%;
+
+    max-width: 470px;
+
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 25px 60px rgba(15, 23, 42, 0.12);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================================
+   CONVERTER HEADER
+========================================= */
+
+.converter-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 22px;
+}
+
+.converter-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+.converter-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+}
+
+.converter-title h3 {
+    margin: 0 0 3px;
+
+    color: #0f172a;
+
+    font-size: 14px;
+}
+
+.converter-title p {
+    margin: 0;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+}
+
+
+/* Online */
+
+.online-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #16a34a;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+.online-status span {
+    width: 7px;
+    height: 7px;
+
+    background: #22c55e;
+
+    border-radius: 50%;
+
+    animation: pulse 2s infinite;
+}
+
+
+/* =========================================
+   UPLOAD AREA
+========================================= */
+
+.upload-area {
+    padding: 38px 20px;
+
+    text-align: center;
+
+    background: #f8fafc;
+
+    border: 1.5px dashed #cbd5e1;
+
+    border-radius: 13px;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.upload-area.dragover {
+    background: #eff6ff;
+
+    border-color: #2563eb;
+}
+
+
+/* Upload Icon */
+
+.upload-icon {
+    width: 55px;
+    height: 55px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #eff6ff;
+
+    border-radius: 50%;
+
+    color: #2563eb;
+
+    font-size: 21px;
+}
+
+.upload-area h4 {
+    margin-bottom: 6px;
+
+    color: #1e293b;
+
+    font-size: 14px;
+}
+
+.upload-area p {
+    margin-bottom: 17px;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+}
+
+
+/* Choose File */
+
+.choose-file-btn {
+    padding: 9px 15px;
+
+    background: #ffffff;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 7px;
+
+    color: #334155;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.choose-file-btn:hover {
+    border-color: #2563eb;
+
+    color: #2563eb;
+}
+
+.upload-area small {
+    display: block;
+
+    margin-top: 13px;
+
+    color: #94a3b8;
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   SELECTED FILE
+========================================= */
+
+.selected-file {
+    display: none;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 15px;
+
+    padding: 12px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 10px;
+}
+
+.selected-file.show {
+    display: flex;
+}
+
+.selected-file-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+}
+
+.selected-file-info {
+    min-width: 0;
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.selected-file-info strong {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    color: #334155;
+
+    font-size: 12px;
+}
+
+.selected-file-info span {
+    color: #94a3b8;
+
+    font-size: 10px;
+}
+
+#removeFile {
+    border: none;
+
+    background: transparent;
+
+    color: #94a3b8;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+#removeFile:hover {
+    color: #ef4444;
+}
+
+
+/* =========================================
+   CONVERT BUTTON
+========================================= */
+
+.convert-btn {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 16px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.convert-btn:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+}
+
+.convert-btn:disabled {
+    background: #94a3b8;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================
+   FLOATING CARDS
+========================================= */
+
+.floating-card {
+    position: absolute;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 11px 14px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 12px 30px rgba(15, 23, 42, 0.10);
+
+    animation: float 4s ease-in-out infinite;
+}
+
+.floating-card i {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    font-size: 13px;
+}
+
+.floating-card div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.floating-card strong {
+    color: #334155;
+
+    font-size: 10px;
+}
+
+.floating-card span {
+    color: #94a3b8;
+
+    font-size: 9px;
+}
+
+.floating-card-one {
+    top: 55px;
+    left: -30px;
+}
+
+.floating-card-two {
+    right: -25px;
+    bottom: 60px;
+
+    animation-delay: 1.5s;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+
+    0% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 7px rgba(34, 197, 94, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+    .hero {
+        padding: 70px 25px 90px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 750px;
+
+        margin: auto;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons,
+    .supported-formats {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        min-height: 480px;
+    }
+
+    .floating-card-one {
+        left: 5%;
+    }
+
+    .floating-card-two {
+        right: 5%;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 55px 18px 70px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .hero-btn {
+        width: 100%;
+    }
+
+    .supported-formats {
+        gap: 7px;
+    }
+
+    .hero-visual {
+        min-height: auto;
+    }
+
+    .hero-card {
+        padding: 18px;
+    }
+
+    .floating-card {
+        display: none;
+    }
+
+    .upload-area {
+        padding: 30px 15px;
+    }
+}

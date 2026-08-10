@@ -299,3 +299,311 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =========================================
+       ELEMENTS
+    ========================================= */
+
+    const uploadArea =
+        document.getElementById("uploadArea");
+
+    const chooseFileBtn =
+        document.getElementById("chooseFileBtn");
+
+    const fileInput =
+        document.getElementById("heroFileInput");
+
+    const selectedFile =
+        document.getElementById("selectedFile");
+
+    const fileName =
+        document.getElementById("fileName");
+
+    const fileSize =
+        document.getElementById("fileSize");
+
+    const removeFile =
+        document.getElementById("removeFile");
+
+    const convertBtn =
+        document.getElementById("convertBtn");
+
+
+    /* =========================================
+       CHOOSE FILE
+    ========================================= */
+
+    chooseFileBtn.addEventListener(
+        "click",
+        function () {
+
+            fileInput.click();
+
+        }
+    );
+
+
+    /* =========================================
+       FILE INPUT CHANGE
+    ========================================= */
+
+    fileInput.addEventListener(
+        "change",
+        function () {
+
+            if (this.files.length > 0) {
+
+                handleFile(this.files[0]);
+
+            }
+
+        }
+    );
+
+
+    /* =========================================
+       HANDLE FILE
+    ========================================= */
+
+    function handleFile(file) {
+
+        /* Maximum size = 50 MB */
+
+        const maxSize =
+            50 * 1024 * 1024;
+
+        if (file.size > maxSize) {
+
+            alert(
+                "File size must be less than 50 MB."
+            );
+
+            resetFile();
+
+            return;
+        }
+
+
+        /* Show file information */
+
+        fileName.textContent =
+            file.name;
+
+        fileSize.textContent =
+            formatFileSize(file.size);
+
+
+        selectedFile.classList.add("show");
+
+        uploadArea.style.display = "none";
+
+
+        /* Enable conversion */
+
+        convertBtn.disabled = false;
+
+    }
+
+
+    /* =========================================
+       FORMAT FILE SIZE
+    ========================================= */
+
+    function formatFileSize(bytes) {
+
+        if (bytes === 0) {
+            return "0 Bytes";
+        }
+
+        const units =
+            [
+                "Bytes",
+                "KB",
+                "MB",
+                "GB"
+            ];
+
+        const index =
+            Math.floor(
+                Math.log(bytes) /
+                Math.log(1024)
+            );
+
+        return (
+            parseFloat(
+                (bytes /
+                    Math.pow(1024, index)
+                ).toFixed(2)
+            ) +
+            " " +
+            units[index]
+        );
+
+    }
+
+
+    /* =========================================
+       REMOVE FILE
+    ========================================= */
+
+    removeFile.addEventListener(
+        "click",
+        function () {
+
+            resetFile();
+
+        }
+    );
+
+
+    function resetFile() {
+
+        fileInput.value = "";
+
+        selectedFile.classList.remove(
+            "show"
+        );
+
+        uploadArea.style.display =
+            "block";
+
+        convertBtn.disabled = false;
+
+    }
+
+
+    /* =========================================
+       DRAG & DROP
+    ========================================= */
+
+    uploadArea.addEventListener(
+        "dragover",
+        function (event) {
+
+            event.preventDefault();
+
+            uploadArea.classList.add(
+                "dragover"
+            );
+
+        }
+    );
+
+
+    uploadArea.addEventListener(
+        "dragleave",
+        function () {
+
+            uploadArea.classList.remove(
+                "dragover"
+            );
+
+        }
+    );
+
+
+    uploadArea.addEventListener(
+        "drop",
+        function (event) {
+
+            event.preventDefault();
+
+            uploadArea.classList.remove(
+                "dragover"
+            );
+
+
+            const files =
+                event.dataTransfer.files;
+
+
+            if (files.length > 0) {
+
+                const file =
+                    files[0];
+
+                fileInput.files =
+                    files;
+
+                handleFile(file);
+
+            }
+
+        }
+    );
+
+
+    /* =========================================
+       CONVERT BUTTON
+    ========================================= */
+
+    convertBtn.addEventListener(
+        "click",
+        function () {
+
+            if (!fileInput.files.length) {
+
+                alert(
+                    "Please select a file first."
+                );
+
+                return;
+
+            }
+
+
+            const originalText =
+                convertBtn.innerHTML;
+
+
+            /* Loading state */
+
+            convertBtn.disabled = true;
+
+            convertBtn.innerHTML =
+                `
+                <i class="fa-solid fa-spinner fa-spin"></i>
+                Converting...
+                `;
+
+
+            /*
+                Demo conversion.
+
+                Actual conversion backend
+                will be connected later.
+            */
+
+            setTimeout(
+                function () {
+
+                    convertBtn.innerHTML =
+                        `
+                        <i class="fa-solid fa-check"></i>
+                        Conversion Ready
+                        `;
+
+
+                    setTimeout(
+                        function () {
+
+                            convertBtn.innerHTML =
+                                originalText;
+
+                            convertBtn.disabled =
+                                false;
+
+                        },
+                        2000
+                    );
+
+                },
+                2000
+            );
+
+        }
+    );
+
+});

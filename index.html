@@ -33,7 +33,6 @@
                 <span>My<span>Docverter</span></span>
             </a>
 
-
             <!-- Navigation -->
             <nav class="main-nav" id="mainNav">
 
@@ -118,7 +117,207 @@
 
     </main>
 
+<!-- ================= HERO SECTION ================= -->
 
+<section class="hero" id="home">
+
+    <div class="hero-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                <i class="fa-solid fa-bolt"></i>
+                Fast & Easy Document Conversion
+            </div>
+
+            <h1>
+                Convert Your Documents
+                <span>Quickly & Easily</span>
+            </h1>
+
+            <p class="hero-description">
+                Transform your documents into the format you need.
+                Fast, simple and reliable conversion tools — all in
+                one place.
+            </p>
+
+            <!-- CTA BUTTONS -->
+            <div class="hero-buttons">
+
+                <a href="#converter" class="hero-btn primary-btn">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    Start Converting
+                </a>
+
+                <a href="#features" class="hero-btn secondary-btn">
+                    Explore Tools
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+            <!-- SUPPORTED FORMATS -->
+            <div class="supported-formats">
+
+                <span>Supports:</span>
+
+                <div class="format">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    PDF
+                </div>
+
+                <div class="format">
+                    <i class="fa-solid fa-file-word"></i>
+                    DOCX
+                </div>
+
+                <div class="format">
+                    <i class="fa-solid fa-file-excel"></i>
+                    XLSX
+                </div>
+
+                <div class="format">
+                    <i class="fa-solid fa-image"></i>
+                    JPG
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+        <div class="hero-visual">
+
+            <div class="hero-card">
+
+                <!-- Card Header -->
+                <div class="converter-header">
+
+                    <div class="converter-title">
+                        <div class="converter-icon">
+                            <i class="fa-solid fa-file-arrow-up"></i>
+                        </div>
+
+                        <div>
+                            <h3>Document Converter</h3>
+                            <p>Convert your file</p>
+                        </div>
+                    </div>
+
+                    <span class="online-status">
+                        <span></span>
+                        Online
+                    </span>
+
+                </div>
+
+
+                <!-- Upload Area -->
+                <div class="upload-area" id="uploadArea">
+
+                    <div class="upload-icon">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+
+                    <h4>Drop your file here</h4>
+
+                    <p>
+                        or choose a file from your device
+                    </p>
+
+                    <button
+                        type="button"
+                        class="choose-file-btn"
+                        id="chooseFileBtn"
+                    >
+                        Choose File
+                    </button>
+
+                    <input
+                        type="file"
+                        id="heroFileInput"
+                        hidden
+                    >
+
+                    <small>
+                        Maximum file size: 50 MB
+                    </small>
+
+                </div>
+
+
+                <!-- Selected File -->
+                <div
+                    class="selected-file"
+                    id="selectedFile"
+                >
+
+                    <div class="selected-file-icon">
+                        <i class="fa-solid fa-file"></i>
+                    </div>
+
+                    <div class="selected-file-info">
+
+                        <strong id="fileName">
+                            document.pdf
+                        </strong>
+
+                        <span id="fileSize">
+                            0 KB
+                        </span>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        id="removeFile"
+                        aria-label="Remove file"
+                    >
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+
+                </div>
+
+
+                <!-- Convert Button -->
+                <button
+                    type="button"
+                    class="convert-btn"
+                    id="convertBtn"
+                >
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    Convert Document
+                </button>
+
+            </div>
+
+
+            <!-- Floating Cards -->
+
+            <div class="floating-card floating-card-one">
+                <i class="fa-solid fa-check"></i>
+                <div>
+                    <strong>Fast Conversion</strong>
+                    <span>Ready in seconds</span>
+                </div>
+            </div>
+
+
+            <div class="floating-card floating-card-two">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                    <strong>Easy to Use</strong>
+                    <span>Simple & secure</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
     <!-- ================= FOOTER ================= -->
 
     <footer class="site-footer">
