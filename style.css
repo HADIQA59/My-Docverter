@@ -1,0 +1,723 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        "Inter",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.site-header {
+    width: 100%;
+    height: 76px;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-bottom: 1px solid #e5e7eb;
+
+    transition:
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* Header after scrolling */
+
+.site-header.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+
+    box-shadow:
+        0 8px 30px rgba(15, 23, 42, 0.08);
+}
+
+
+/* Header Container */
+
+.header-container {
+    width: 100%;
+    max-width: 1240px;
+
+    height: 100%;
+
+    margin: auto;
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    color: #111827;
+
+    font-size: 22px;
+    font-weight: 800;
+
+    letter-spacing: -0.6px;
+
+    white-space: nowrap;
+}
+
+.brand > span > span {
+    color: #2563eb;
+}
+
+
+/* Logo Icon */
+
+.brand-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5
+        );
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    box-shadow:
+        0 5px 15px rgba(37, 99, 235, 0.22);
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    margin-left: auto;
+}
+
+.nav-link {
+    position: relative;
+
+    padding: 10px 14px;
+
+    color: #64748b;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    border-radius: 8px;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* Hover */
+
+.nav-link:hover {
+    color: #2563eb;
+    background: #eff6ff;
+}
+
+
+/* Active */
+
+.nav-link.active {
+    color: #2563eb;
+}
+
+
+/* Active underline */
+
+.nav-link.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 14px;
+    right: 14px;
+    bottom: 3px;
+
+    height: 2px;
+
+    background: #2563eb;
+
+    border-radius: 5px;
+}
+
+
+/* =========================================
+   HEADER CTA
+========================================= */
+
+.header-cta {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 11px 18px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    border-radius: 9px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 5px 15px rgba(37, 99, 235, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.header-cta:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.28);
+}
+
+.header-cta i {
+    font-size: 12px;
+}
+
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.menu-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #2563eb;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.menu-toggle:hover {
+    background: #eff6ff;
+}
+
+
+/* =========================================
+   DEMO CONTENT
+========================================= */
+
+.demo-section {
+    min-height: 500px;
+
+    padding: 100px 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.demo-section h1,
+.demo-section h2 {
+    margin-bottom: 15px;
+}
+
+.demo-section p {
+    color: #64748b;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+    background: #0b1220;
+
+    color: #ffffff;
+
+    margin-top: 0;
+}
+
+
+/* Footer Container */
+
+.footer-container {
+    width: 100%;
+    max-width: 1240px;
+
+    margin: auto;
+
+    padding: 70px 30px 55px;
+
+    display: grid;
+
+    grid-template-columns:
+        2.1fr
+        1fr
+        1fr
+        1fr;
+
+    gap: 60px;
+}
+
+
+/* =========================================
+   FOOTER BRAND
+========================================= */
+
+.footer-brand {
+    max-width: 350px;
+}
+
+
+/* Footer Logo */
+
+.footer-logo {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-bottom: 20px;
+
+    color: #ffffff;
+
+    font-size: 22px;
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+}
+
+.footer-logo > span > span {
+    color: #60a5fa;
+}
+
+
+/* Footer Logo Icon */
+
+.footer-logo-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5
+        );
+
+    color: #ffffff;
+
+    font-size: 17px;
+}
+
+
+/* Footer Description */
+
+.footer-brand p {
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    max-width: 330px;
+}
+
+
+/* =========================================
+   SOCIAL LINKS
+========================================= */
+
+.social-links {
+    display: flex;
+
+    gap: 9px;
+
+    margin-top: 25px;
+}
+
+.social-links a {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #263244;
+
+    border-radius: 8px;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.social-links a:hover {
+    background: #2563eb;
+
+    border-color: #2563eb;
+
+    color: #ffffff;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   FOOTER COLUMNS
+========================================= */
+
+.footer-column h3 {
+    margin-bottom: 20px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.footer-column a {
+    display: block;
+
+    width: fit-content;
+
+    margin-bottom: 13px;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.footer-column a:hover {
+    color: #60a5fa;
+
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   FOOTER BOTTOM
+========================================= */
+
+.footer-bottom {
+    border-top: 1px solid #1e293b;
+}
+
+.footer-bottom-container {
+    width: 100%;
+    max-width: 1240px;
+
+    margin: auto;
+
+    padding: 20px 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.footer-bottom p {
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+.footer-bottom-links {
+    display: flex;
+
+    gap: 22px;
+}
+
+.footer-bottom-links a {
+    color: #64748b;
+
+    font-size: 13px;
+
+    transition: color 0.25s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: #60a5fa;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+    .header-container {
+        padding: 0 20px;
+    }
+
+    .main-nav {
+        gap: 0;
+    }
+
+    .nav-link {
+        padding: 9px 9px;
+        font-size: 13px;
+    }
+
+    .header-cta {
+        padding: 10px 14px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1.5fr 1fr 1fr;
+
+        gap: 45px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        max-width: 500px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .site-header {
+        height: 70px;
+    }
+
+    .header-container {
+        padding: 0 18px;
+
+        gap: 12px;
+    }
+
+
+    /* Hide normal navigation */
+
+    .main-nav {
+        display: none;
+
+        position: absolute;
+
+        top: 70px;
+        left: 0;
+        right: 0;
+
+        width: 100%;
+
+        padding: 12px 18px 18px;
+
+        background: #ffffff;
+
+        border-bottom: 1px solid #e5e7eb;
+
+        box-shadow:
+            0 10px 25px rgba(15, 23, 42, 0.08);
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 4px;
+    }
+
+
+    /* Open navigation */
+
+    .main-nav.open {
+        display: flex;
+    }
+
+
+    .nav-link {
+        width: 100%;
+
+        padding: 12px 14px;
+
+        text-align: left;
+    }
+
+
+    .nav-link.active::after {
+        display: none;
+    }
+
+
+    /* Hide CTA */
+
+    .header-cta {
+        display: none;
+    }
+
+
+    /* Show menu */
+
+    .menu-toggle {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /* Footer */
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        padding: 50px 22px 40px;
+
+        gap: 35px;
+    }
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+    .footer-brand p {
+        max-width: 100%;
+    }
+
+
+    .footer-bottom-container {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 20px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 430px) {
+
+    .brand {
+        font-size: 19px;
+    }
+
+    .brand-icon {
+        width: 36px;
+        height: 36px;
+
+        font-size: 16px;
+    }
+
+    .footer-logo {
+        font-size: 20px;
+    }
+
+    .footer-logo-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .footer-bottom-links {
+        gap: 15px;
+    }
+}
