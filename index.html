@@ -1,437 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyDocverter — the format press</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231b1815'/%3E%3Crect x='6' y='6' width='20' height='20' fill='none' stroke='%23c17a3d' stroke-width='2'/%3E%3Ctext x='16' y='21' font-family='Georgia,serif' font-size='14' fill='%23efe8d8' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <title>MyDocverter - Document Converter</title>
-
-    <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- ================= HEADER ================= -->
-
-    <header class="site-header" id="siteHeader">
-
-        <div class="header-container">
-
-            <!-- Logo -->
-            <a href="#home" class="brand">
-                <div class="brand-icon">
-                    <i class="fa-solid fa-file-lines"></i>
-                </div>
-
-                <span>My<span>Docverter</span></span>
-            </a>
-
-            <!-- Navigation -->
-            <nav class="main-nav" id="mainNav">
-
-                <a href="#home" class="nav-link active">
-                    Home
-                </a>
-
-                <a href="#converter" class="nav-link">
-                    Converter
-                </a>
-
-                <a href="#features" class="nav-link">
-                    Features
-                </a>
-
-                <a href="#about" class="nav-link">
-                    About
-                </a>
-
-                <a href="#contact" class="nav-link">
-                    Contact
-                </a>
-
-            </nav>
-
-            <!-- Header Button -->
-            <a href="#converter" class="header-cta">
-                Start Converting
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
-
-
-            <!-- Mobile Menu Button -->
-            <button
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="Open menu"
-                aria-expanded="false"
-            >
-                <i class="fa-solid fa-bars"></i>
-            </button>
-
-        </div>
-
-    </header>
-
-
-    <!-- ================= DEMO CONTENT ================= -->
-
-    <main>
-
-        <section id="home" class="demo-section">
-            <h1>Convert Your Documents Easily</h1>
-            <p>
-                Fast, simple and reliable document conversion with MyDocverter.
-            </p>
-        </section>
-
-
-        <section id="converter" class="demo-section">
-            <h2>Document Converter</h2>
-            <p>Your converter section goes here.</p>
-        </section>
-
-
-        <section id="features" class="demo-section">
-            <h2>Powerful Features</h2>
-            <p>Your features section goes here.</p>
-        </section>
-
-
-        <section id="about" class="demo-section">
-            <h2>About MyDocverter</h2>
-            <p>Your about section goes here.</p>
-        </section>
-
-
-        <section id="contact" class="demo-section">
-            <h2>Contact Us</h2>
-            <p>Your contact section goes here.</p>
-        </section>
-
-    </main>
-
-<!-- ================= HERO SECTION ================= -->
-
-<section class="hero" id="home">
-
-    <div class="hero-container">
-
-        <!-- LEFT CONTENT -->
-        <div class="hero-content">
-
-            <div class="hero-badge">
-                <i class="fa-solid fa-bolt"></i>
-                Fast & Easy Document Conversion
-            </div>
-
-            <h1>
-                Convert Your Documents
-                <span>Quickly & Easily</span>
-            </h1>
-
-            <p class="hero-description">
-                Transform your documents into the format you need.
-                Fast, simple and reliable conversion tools — all in
-                one place.
-            </p>
-
-            <!-- CTA BUTTONS -->
-            <div class="hero-buttons">
-
-                <a href="#converter" class="hero-btn primary-btn">
-                    <i class="fa-solid fa-cloud-arrow-up"></i>
-                    Start Converting
-                </a>
-
-                <a href="#features" class="hero-btn secondary-btn">
-                    Explore Tools
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
-            </div>
-
-            <!-- SUPPORTED FORMATS -->
-            <div class="supported-formats">
-
-                <span>Supports:</span>
-
-                <div class="format">
-                    <i class="fa-solid fa-file-pdf"></i>
-                    PDF
-                </div>
-
-                <div class="format">
-                    <i class="fa-solid fa-file-word"></i>
-                    DOCX
-                </div>
-
-                <div class="format">
-                    <i class="fa-solid fa-file-excel"></i>
-                    XLSX
-                </div>
-
-                <div class="format">
-                    <i class="fa-solid fa-image"></i>
-                    JPG
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- RIGHT SIDE -->
-        <div class="hero-visual">
-
-            <div class="hero-card">
-
-                <!-- Card Header -->
-                <div class="converter-header">
-
-                    <div class="converter-title">
-                        <div class="converter-icon">
-                            <i class="fa-solid fa-file-arrow-up"></i>
-                        </div>
-
-                        <div>
-                            <h3>Document Converter</h3>
-                            <p>Convert your file</p>
-                        </div>
-                    </div>
-
-                    <span class="online-status">
-                        <span></span>
-                        Online
-                    </span>
-
-                </div>
-
-
-                <!-- Upload Area -->
-                <div class="upload-area" id="uploadArea">
-
-                    <div class="upload-icon">
-                        <i class="fa-solid fa-cloud-arrow-up"></i>
-                    </div>
-
-                    <h4>Drop your file here</h4>
-
-                    <p>
-                        or choose a file from your device
-                    </p>
-
-                    <button
-                        type="button"
-                        class="choose-file-btn"
-                        id="chooseFileBtn"
-                    >
-                        Choose File
-                    </button>
-
-                    <input
-                        type="file"
-                        id="heroFileInput"
-                        hidden
-                    >
-
-                    <small>
-                        Maximum file size: 50 MB
-                    </small>
-
-                </div>
-
-
-                <!-- Selected File -->
-                <div
-                    class="selected-file"
-                    id="selectedFile"
-                >
-
-                    <div class="selected-file-icon">
-                        <i class="fa-solid fa-file"></i>
-                    </div>
-
-                    <div class="selected-file-info">
-
-                        <strong id="fileName">
-                            document.pdf
-                        </strong>
-
-                        <span id="fileSize">
-                            0 KB
-                        </span>
-
-                    </div>
-
-                    <button
-                        type="button"
-                        id="removeFile"
-                        aria-label="Remove file"
-                    >
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
-
-                </div>
-
-
-                <!-- Convert Button -->
-                <button
-                    type="button"
-                    class="convert-btn"
-                    id="convertBtn"
-                >
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
-                    Convert Document
-                </button>
-
-            </div>
-
-
-            <!-- Floating Cards -->
-
-            <div class="floating-card floating-card-one">
-                <i class="fa-solid fa-check"></i>
-                <div>
-                    <strong>Fast Conversion</strong>
-                    <span>Ready in seconds</span>
-                </div>
-            </div>
-
-
-            <div class="floating-card floating-card-two">
-                <i class="fa-solid fa-shield-halved"></i>
-                <div>
-                    <strong>Easy to Use</strong>
-                    <span>Simple & secure</span>
-                </div>
-            </div>
-
-        </div>
-
+<div class="grain"></div>
+
+<header>
+  <a class="logo" href="#top">
+    <span class="logo-mark">M</span>
+    <span class="logo-word">MyDoc<em>verter</em></span>
+  </a>
+  <nav>
+    <a href="#press">The Press</a>
+    <a href="#catalog">Formats</a>
+  </nav>
+</header>
+
+<main class="wrap" id="top">
+  <section class="hero">
+    <p class="eyebrow">Mydocverter — format press</p>
+    <h1>Feed it in.<br>Press it. <i>Get another format out.</i></h1>
+    <p class="lede">Images, documents, and data — converted right in this browser tab. <strong>Nothing you drop here is uploaded anywhere.</strong></p>
+  </section>
+
+  <section id="press" class="press-card" aria-label="File converter">
+    <div class="press-card-top">
+      <span class="tag">Plate 01 — Load</span>
+      <div class="dots"><span></span><span></span><span></span></div>
     </div>
 
-</section>
-    <!-- ================= FOOTER ================= -->
+    <div class="press-body">
 
-    <footer class="site-footer">
+      <!-- EMPTY STATE -->
+      <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Drop a file here or browse your device">
+        <div class="drop-icon" aria-hidden="true"></div>
+        <div class="drop-title">Drop a file on the press</div>
+        <div class="drop-sub">or <button type="button" id="browseBtn">choose one from your device</button></div>
+        <div class="drop-formats">PNG · JPG · WEBP · BMP · PDF · DOCX · CSV · JSON · TXT · MD</div>
+        <input type="file" id="fileInput" class="sr-only" tabindex="-1">
+      </div>
 
-        <div class="footer-container">
-
-            <!-- Brand Section -->
-            <div class="footer-brand">
-
-                <a href="#home" class="footer-logo">
-
-                    <div class="footer-logo-icon">
-                        <i class="fa-solid fa-file-lines"></i>
-                    </div>
-
-                    <span>My<span>Docverter</span></span>
-
-                </a>
-
-                <p>
-                    Convert your documents quickly, easily and securely.
-                    MyDocverter provides simple and reliable tools
-                    for all your document conversion needs.
-                </p>
-
-
-                <!-- Social Icons -->
-                <div class="social-links">
-
-                    <a href="#" aria-label="Facebook">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
-
-                    <a href="#" aria-label="LinkedIn">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-
-                    <a href="#" aria-label="Instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- Product -->
-            <div class="footer-column">
-
-                <h3>Product</h3>
-
-                <a href="#converter">Popular PDF Tools</a>
-                <a href="#converter">PDF Conversion</a>
-                <a href="#converter">PDF Security</a>
-                <a href="#converter">PDF Optimization</a>
-                <a href="#converter">Other Tools</a>
-            </div>
-
-
-            <!-- Company -->
-            <div class="footer-column">
-
-                <h3>Company</h3>
-
-                <a href="#about">About Us</a>
-                <a href="#features">Features</a>
-                <a href="#contact">Contact Us</a>
-                <a href="#">FAQ</a>
-
-            </div>
-
-
-            <!-- Support -->
-            <div class="footer-column">
-
-                <h3>Support</h3>
-
-                <a href="#">Help Center</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms & Conditions</a>
-                <a href="#">Security</a>
-
-            </div>
-
+      <!-- LOADED STATE -->
+      <div class="loaded-panel" id="loadedPanel">
+        <div class="file-row">
+          <div class="type-block" id="srcBlock"><span class="lbl" id="srcLbl">—</span></div>
+          <div class="file-info">
+            <div class="file-name" id="fileName">—</div>
+            <div class="file-meta" id="fileMeta">—</div>
+          </div>
+          <button class="file-clear" id="clearBtn" title="Remove file" aria-label="Remove file">✕</button>
         </div>
 
-
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-
-            <div class="footer-bottom-container">
-
-                <p>
-                    © <span id="currentYear"></span>
-                    MyDocverter. All Rights Reserved.
-                </p>
-
-                <div class="footer-bottom-links">
-
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms</a>
-                    <a href="#">Cookies</a>
-
-                </div>
-
-            </div>
-
+        <div>
+          <p class="section-label">Press it into</p>
+          <div class="chip-row" id="targetChips"></div>
+          <p class="no-targets" id="noTargets" style="display:none;">No plates fit this format yet — try a different file.</p>
         </div>
 
-    </footer>
+        <div class="actions-row">
+          <button class="btn btn-primary" id="convertBtn" disabled>Convert</button>
+          <button class="btn btn-ghost" id="loadedClearBtn">Start over</button>
+        </div>
+      </div>
 
+      <!-- PROCESSING STATE -->
+      <div class="processing-panel" id="processingPanel">
+        <div class="press-stage" id="pressStage">
+          <div class="press-head"></div>
+          <div class="ink-flash"></div>
+          <div class="type-block copper" id="animBlock"><span class="lbl" id="animLbl">—</span></div>
+        </div>
+        <p class="processing-label" id="processingLabel">Pressing plate…</p>
+      </div>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+      <!-- RESULT STATE -->
+      <div class="result-panel" id="resultPanel">
+        <div class="result-stamp">
+          <div class="type-block" id="resultSrcBlock"><span class="lbl" id="resultSrcLbl">—</span></div>
+          <span class="result-arrow">→</span>
+          <div class="type-block copper" id="resultTgtBlock"><span class="lbl" id="resultTgtLbl">—</span></div>
+        </div>
+        <div>
+          <p class="result-title">Done. Your file's ready.</p>
+          <p class="result-sub" id="resultSub">Pressed and cooled — download whenever you're ready.</p>
+        </div>
+        <div class="result-actions">
+          <a class="btn btn-primary" id="downloadBtn" download>Download</a>
+          <button class="btn btn-ghost" id="convertAgainBtn">Press again</button>
+          <button class="btn btn-ghost" id="resultClearBtn">Start over</button>
+        </div>
+      </div>
 
+      <!-- ERROR STATE -->
+      <div class="error-panel" id="errorPanel">
+        <p class="error-title">The press jammed.</p>
+        <p class="error-sub" id="errorSub">Something went wrong during conversion.</p>
+        <div class="result-actions">
+          <button class="btn btn-primary" id="errorRetryBtn">Try again</button>
+          <button class="btn btn-ghost" id="errorClearBtn">Start over</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="log-wrap">
+    <div class="log" id="log">
+      <p class="log-title">Press log — this session</p>
+      <div id="logRows"></div>
+    </div>
+  </div>
+
+  <section class="catalog" id="catalog">
+    <div class="catalog-head">
+      <p class="eyebrow">What the press can do</p>
+      <h2>Every plate in the case</h2>
+      <p>Formats are grouped by kind. Anything you drop is matched against these plates automatically — only valid targets are ever offered.</p>
+    </div>
+    <div class="catalog-grid">
+      <div class="catalog-col">
+        <h3>Images</h3>
+        <div class="map-row"><span class="from">PNG</span><span class="arrow">→</span><span class="to">JPG, WEBP, BMP, PDF</span></div>
+        <div class="map-row"><span class="from">JPG</span><span class="arrow">→</span><span class="to">PNG, WEBP, BMP, PDF</span></div>
+        <div class="map-row"><span class="from">WEBP</span><span class="arrow">→</span><span class="to">PNG, JPG, BMP, PDF</span></div>
+        <div class="map-row"><span class="from">BMP</span><span class="arrow">→</span><span class="to">PNG, JPG, WEBP, PDF</span></div>
+      </div>
+      <div class="catalog-col">
+        <h3>Documents</h3>
+        <div class="map-row"><span class="from">DOCX</span><span class="arrow">→</span><span class="to">TXT, MD, HTML, PDF</span></div>
+        <div class="map-row"><span class="from">PDF</span><span class="arrow">→</span><span class="to">TXT, MD</span></div>
+        <div class="map-row"><span class="from">TXT</span><span class="arrow">→</span><span class="to">MD, PDF</span></div>
+        <div class="map-row"><span class="from">MD</span><span class="arrow">→</span><span class="to">TXT, PDF</span></div>
+      </div>
+      <div class="catalog-col">
+        <h3>Data</h3>
+        <div class="map-row"><span class="from">CSV</span><span class="arrow">→</span><span class="to">JSON, PDF</span></div>
+        <div class="map-row"><span class="from">JSON</span><span class="arrow">→</span><span class="to">CSV, PDF</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="foot-row">
+    <p class="foot-note"><strong>Everything happens on your machine.</strong> Files are read, converted, and handed back to you in this tab — nothing is sent to a server. Refreshing the page clears the press log.</p>
+    <p class="foot-brand">MYDOCVERTER — RUNS ENTIRELY CLIENT-SIDE</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mammoth@1.7.2/mammoth.browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+
+<script src="script.js"></script>
 </body>
 </html>
