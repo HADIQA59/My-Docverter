@@ -3,165 +3,256 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MyDocverter — the format press</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231b1815'/%3E%3Crect x='6' y='6' width='20' height='20' fill='none' stroke='%23c17a3d' stroke-width='2'/%3E%3Ctext x='16' y='21' font-family='Georgia,serif' font-size='14' fill='%23efe8d8' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<title>MyDocverter— Turn any file into the one you need</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="grain"></div>
-
-<header>
-  <a class="logo" href="#top">
-    <span class="logo-mark">M</span>
-    <span class="logo-word">MyDoc<em>verter</em></span>
-  </a>
-  <nav>
-    <a href="#press">The Press</a>
-    <a href="#catalog">Formats</a>
-  </nav>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="34" height="34">
+          <path d="M8 4 H26 L32 10 V36 H8 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M26 4 V10 H32" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M8 36 L20 24 L32 36" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </span>
+      <span class="brand-name">MyDocverter</span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#tools">Tools</a>
+      <a href="#folio">All Features</a>
+      <a href="#trust">Why us</a>
+      <a href="#say">Notes</a>
+    </nav>
+    <a class="btn btn-ghost" href="#tools">Open a file →</a>
+  </div>
 </header>
 
-<main class="wrap" id="top">
-  <section class="hero">
-    <p class="eyebrow">Mydocverter — format press</p>
-    <h1>Feed it in.<br>Press it. <i>Get another format out.</i></h1>
-    <p class="lede">Images, documents, and data — converted right in this browser tab. <strong>Nothing you drop here is uploaded anywhere.</strong></p>
-  </section>
+<main id="top">
 
-  <section id="press" class="press-card" aria-label="File converter">
-    <div class="press-card-top">
-      <span class="tag">Plate 01 — Load</span>
-      <div class="dots"><span></span><span></span><span></span></div>
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div class="hero-copy">
+      <h1>Turn any file<br> into the one<br> you <em>actually</em> need.</h1>
+      <p class="lede">Merge, convert, compress, sign — thirty-one small tools that behave like one good habit. No account, no watermark, nothing left behind on our shelves.</p>
+      <div class="hero-actions">
+        <a href="#tools" class="btn btn-primary">Browse the tools</a>
+        <a href="#folio" class="btn btn-text">See the whole folio ↓</a>
+      </div>
+      <dl class="hero-stats">
+        <div><dt>31</dt><dd>tools on the desk</dd></div>
+        <div><dt>0¢</dt><dd>cost, always</dd></div>
+        <div><dt>&lt;60s</dt><dd>avg. turnaround</dd></div>
+      </dl>
     </div>
 
-    <div class="press-body">
-
-      <!-- EMPTY STATE -->
-      <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Drop a file here or browse your device">
-        <div class="drop-icon" aria-hidden="true"></div>
-        <div class="drop-title">Drop a file on the press</div>
-        <div class="drop-sub">or <button type="button" id="browseBtn">choose one from your device</button></div>
-        <div class="drop-formats">PNG · JPG · WEBP · BMP · PDF · DOCX · CSV · JSON · TXT · MD</div>
-        <input type="file" id="fileInput" class="sr-only" tabindex="-1">
+    <div class="hero-stack" aria-hidden="true">
+      <div class="doc doc-1"><span class="doc-tag">.docx</span></div>
+      <div class="doc doc-2"><span class="doc-tag">.jpg</span></div>
+      <div class="doc doc-3"><span class="doc-tag">.pdf</span><span class="doc-lines"></span></div>
+      <div class="stamp">
+        <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="60" cy="60" r="46" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+        <span>INSTANT<br>FREE<br>SECURE</span>
       </div>
-
-      <!-- LOADED STATE -->
-      <div class="loaded-panel" id="loadedPanel">
-        <div class="file-row">
-          <div class="type-block" id="srcBlock"><span class="lbl" id="srcLbl">—</span></div>
-          <div class="file-info">
-            <div class="file-name" id="fileName">—</div>
-            <div class="file-meta" id="fileMeta">—</div>
-          </div>
-          <button class="file-clear" id="clearBtn" title="Remove file" aria-label="Remove file">✕</button>
-        </div>
-
-        <div>
-          <p class="section-label">Press it into</p>
-          <div class="chip-row" id="targetChips"></div>
-          <p class="no-targets" id="noTargets" style="display:none;">No plates fit this format yet — try a different file.</p>
-        </div>
-
-        <div class="actions-row">
-          <button class="btn btn-primary" id="convertBtn" disabled>Convert</button>
-          <button class="btn btn-ghost" id="loadedClearBtn">Start over</button>
-        </div>
-      </div>
-
-      <!-- PROCESSING STATE -->
-      <div class="processing-panel" id="processingPanel">
-        <div class="press-stage" id="pressStage">
-          <div class="press-head"></div>
-          <div class="ink-flash"></div>
-          <div class="type-block copper" id="animBlock"><span class="lbl" id="animLbl">—</span></div>
-        </div>
-        <p class="processing-label" id="processingLabel">Pressing plate…</p>
-      </div>
-
-      <!-- RESULT STATE -->
-      <div class="result-panel" id="resultPanel">
-        <div class="result-stamp">
-          <div class="type-block" id="resultSrcBlock"><span class="lbl" id="resultSrcLbl">—</span></div>
-          <span class="result-arrow">→</span>
-          <div class="type-block copper" id="resultTgtBlock"><span class="lbl" id="resultTgtLbl">—</span></div>
-        </div>
-        <div>
-          <p class="result-title">Done. Your file's ready.</p>
-          <p class="result-sub" id="resultSub">Pressed and cooled — download whenever you're ready.</p>
-        </div>
-        <div class="result-actions">
-          <a class="btn btn-primary" id="downloadBtn" download>Download</a>
-          <button class="btn btn-ghost" id="convertAgainBtn">Press again</button>
-          <button class="btn btn-ghost" id="resultClearBtn">Start over</button>
-        </div>
-      </div>
-
-      <!-- ERROR STATE -->
-      <div class="error-panel" id="errorPanel">
-        <p class="error-title">The press jammed.</p>
-        <p class="error-sub" id="errorSub">Something went wrong during conversion.</p>
-        <div class="result-actions">
-          <button class="btn btn-primary" id="errorRetryBtn">Try again</button>
-          <button class="btn btn-ghost" id="errorClearBtn">Start over</button>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <div class="log-wrap">
-    <div class="log" id="log">
-      <p class="log-title">Press log — this session</p>
-      <div id="logRows"></div>
-    </div>
-  </div>
+  <!-- MOST REQUESTED -->
+  <section class="section" id="tools">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>The six everyone reaches for first</h2>
+      </div>
 
-  <section class="catalog" id="catalog">
-    <div class="catalog-head">
-      <p class="eyebrow">What the press can do</p>
-      <h2>Every plate in the case</h2>
-      <p>Formats are grouped by kind. Anything you drop is matched against these plates automatically — only valid targets are ever offered.</p>
-    </div>
-    <div class="catalog-grid">
-      <div class="catalog-col">
-        <h3>Images</h3>
-        <div class="map-row"><span class="from">PNG</span><span class="arrow">→</span><span class="to">JPG, WEBP, BMP, PDF</span></div>
-        <div class="map-row"><span class="from">JPG</span><span class="arrow">→</span><span class="to">PNG, WEBP, BMP, PDF</span></div>
-        <div class="map-row"><span class="from">WEBP</span><span class="arrow">→</span><span class="to">PNG, JPG, BMP, PDF</span></div>
-        <div class="map-row"><span class="from">BMP</span><span class="arrow">→</span><span class="to">PNG, JPG, WEBP, PDF</span></div>
-      </div>
-      <div class="catalog-col">
-        <h3>Documents</h3>
-        <div class="map-row"><span class="from">DOCX</span><span class="arrow">→</span><span class="to">TXT, MD, HTML, PDF</span></div>
-        <div class="map-row"><span class="from">PDF</span><span class="arrow">→</span><span class="to">TXT, MD</span></div>
-        <div class="map-row"><span class="from">TXT</span><span class="arrow">→</span><span class="to">MD, PDF</span></div>
-        <div class="map-row"><span class="from">MD</span><span class="arrow">→</span><span class="to">TXT, PDF</span></div>
-      </div>
-      <div class="catalog-col">
-        <h3>Data</h3>
-        <div class="map-row"><span class="from">CSV</span><span class="arrow">→</span><span class="to">JSON, PDF</span></div>
-        <div class="map-row"><span class="from">JSON</span><span class="arrow">→</span><span class="to">CSV, PDF</span></div>
+      <div class="card-grid">
+        <article class="tool-card">
+          <span class="dogear" aria-hidden="true"></span>
+          <span class="tool-glyph">⇄</span>
+          <h3>Merge PDFs</h3>
+          <p>Drop in as many files as you like, drag to reorder, out comes one.</p>
+          <span class="tool-target">→ .pdf</span>
+        </article>
+        <article class="tool-card">
+          <span class="dogear" aria-hidden="true"></span>
+          <span class="tool-glyph">✂</span>
+          <h3>Split a PDF</h3>
+          <p>Pull specific pages out, or cut a long file into even chapters.</p>
+          <span class="tool-target">→ .pdf ×n</span>
+        </article>
+        <article class="tool-card">
+          <span class="dogear" aria-hidden="true"></span>
+          <span class="tool-glyph">↓</span>
+          <h3>Compress a PDF</h3>
+          <p>Shrink the file size for email limits, keep the pages legible.</p>
+          <span class="tool-target">→ .pdf</span>
+        </article>
+        <article class="tool-card">
+          <span class="dogear" aria-hidden="true"></span>
+          <span class="tool-glyph">W</span>
+          <h3>PDF to Word</h3>
+          <p>Get back an editable .docx, formatting and layout intact.</p>
+          <span class="tool-target">→ .docx</span>
+        </article>
+        <article class="tool-card">
+          <span class="dogear" aria-hidden="true"></span>
+          <span class="tool-glyph">✎</span>
+          <h3>Edit a PDF</h3>
+          <p>Fix a typo, drop in an image, adjust a line — right in the page.</p>
+          <span class="tool-target">→ .pdf</span>
+        </article>
+        <article class="tool-card">
+          <span class="dogear" aria-hidden="true"></span>
+          <span class="tool-glyph">✒</span>
+          <h3>Sign a PDF</h3>
+          <p>Draw, type, or upload a signature and place it where it's needed.</p>
+          <span class="tool-target">→ .pdf</span>
+        </article>
       </div>
     </div>
   </section>
+
+  <!-- FULL FOLIO - TABS -->
+  <section class="section section-alt" id="folio">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Every tool, filed by what it does</h2>
+      </div>
+
+      <div class="folio">
+        <div class="tabs" role="tablist" aria-label="Tool categories">
+          <button class="tab is-active" role="tab" aria-selected="true" data-tab="editing">PDF Editing</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="conversion">PDF Conversion</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="security">PDF Security</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="optimization">PDF Optimization</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="other">Other Tools</button>
+        </div>
+
+        <div class="tab-panels">
+          <ul class="tool-list is-active" data-panel="editing">
+            <li><span>Merge PDF</span><small>Combine, in the order you choose</small></li>
+            <li><span>Split PDF</span><small>Pull pages, or cut evenly</small></li>
+            <li><span>Organize PDF</span><small>Reorder, delete, rearrange pages</small></li>
+            <li><span>Compress PDF</span><small>Smaller file, same pages</small></li>
+          </ul>
+          <ul class="tool-list" data-panel="conversion">
+            <li><span>PDF to Word</span><small>Editable .docx, layout intact</small></li>
+            <li><span>Word to PDF</span><small>Locks the layout in place</small></li>
+            <li><span>PDF to Excel</span><small>Pulls tables into .xlsx</small></li>
+            <li><span>PDF to PowerPoint</span><small>Each page becomes a slide</small></li>
+            <li><span>PDF to JPG</span><small>One image per page</small></li>
+            <li><span>JPG to PDF</span><small>Stack images into one file</small></li>
+          </ul>
+          <ul class="tool-list" data-panel="security">
+            <li><span>Protect PDF</span><small>Lock a file to specific eyes</small></li>
+            <li><span>Unlock PDF</span><small>Remove a password you have rights to</small></li>
+            <li><span>Sign PDF</span><small>A signature, placed precisely</small></li>
+            <li><span>Watermark PDF</span><small>Text or image, tiled or centered</small></li>
+          </ul>
+          <ul class="tool-list" data-panel="optimization">
+            <li><span>Compress PDF</span><small>Shrink for email limits</small></li>
+            <li><span>OCR PDF</span><small>Turns scans into selectable text</small></li>
+            <li><span>Repair PDF</span><small>Rescues corrupted files</small></li>
+          </ul>
+          <ul class="tool-list" data-panel="other">
+            <li><span>Edit PDF</span><small>Fix text or drop in an image</small></li>
+            <li><span>Rotate PDF</span><small>Fix sideways scans</small></li>
+            <li><span>Number Pages</span><small>Add running page numbers</small></li>
+            <li><span>Compare PDFs</span><small>Highlights what changed</small></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST / LEDGER -->
+  <section class="section" id="trust">
+    <div class="wrap trust-grid">
+      <div class="trust-copy">
+        <h2>Why Choose MyDocverter</h2>
+        <p class="lede">We built this because most PDF tools are a login wall wearing a free badge. Ours is the opposite: everything runs, then everything is forgotten.</p>
+      </div>
+      <dl class="ledger">
+        <div class="ledger-row">
+          <dt>01</dt><dd class="ledger-label">Files auto-deleted</dd><dd class="ledger-val">after 1 hour</dd>
+        </div>
+        <div class="ledger-row">
+          <dt>02</dt><dd class="ledger-label">Accounts required</dd><dd class="ledger-val">none</dd>
+        </div>
+        <div class="ledger-row">
+          <dt>03</dt><dd class="ledger-label">Tools behind a paywall</dd><dd class="ledger-val">zero of 31</dd>
+        </div>
+        <div class="ledger-row">
+          <dt>04</dt><dd class="ledger-label">Connection</dd><dd class="ledger-val">encrypted, always</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section section-alt" id="say">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What people say once they've used it</h2>
+      </div>
+      <div class="note-grid">
+        <figure class="note-card">
+          <blockquote>"I merge contracts every week. This is the first tool that keeps the page order exactly as I dropped them."</blockquote>
+          <figcaption>Sarah Johnson <span>— Marketing Director</span></figcaption>
+        </figure>
+        <figure class="note-card">
+          <blockquote>"The OCR tool turned three years of scanned lecture notes into searchable text in an afternoon."</blockquote>
+          <figcaption>Michael Chen <span>— Graduate Student</span></figcaption>
+        </figure>
+        <figure class="note-card">
+          <blockquote>"No sign-up, no popup asking for my email halfway through. It just did the thing and let me leave."</blockquote>
+          <figcaption>Priya Nair <span>— Freelance Editor</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta wrap">
+    <h2>Pick a tool, drop a file, get on with your day.</h2>
+    <a href="#tools" class="btn btn-primary btn-lg">Open the toolbox →</a>
+  </section>
+
 </main>
 
-<footer class="wrap">
-  <div class="foot-row">
-    <p class="foot-note"><strong>Everything happens on your machine.</strong> Files are read, converted, and handed back to you in this tab — nothing is sent to a server. Refreshing the page clears the press log.</p>
-    <p class="foot-brand">MYDOCVERTER — RUNS ENTIRELY CLIENT-SIDE</p>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-name">MyDocverter</span>
+      <p>A small, quiet desk for document work. Est. 2026.</p>
+    </div>
+    <div>
+      <h4>Tools</h4>
+      <a href="#tools">Merge PDF</a>
+      <a href="#tools">Split PDF</a>
+      <a href="#tools">Compress PDF</a>
+      <a href="#folio">All Features</a>
+    </div>
+    <div>
+      <h4>Studio</h4>
+      <a href="#trust">Why MyDocverter</a>
+      <a href="#say">Notes</a>
+      <a href="#top">Back to top</a>
+    </div>
+    <div>
+      <h4>Paper trail</h4>
+      <a href="#top">Privacy policy</a>
+      <a href="#top">Terms</a>
+      <a href="#top">Security</a>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 MyDocverter. Every file, filed and forgotten.</span>
   </div>
 </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/mammoth@1.7.2/mammoth.browser.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
 
 <script src="script.js"></script>
 </body>
