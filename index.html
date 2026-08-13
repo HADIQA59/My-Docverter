@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MyDocverter— Turn any file into the one you need</title>
+<title>MyDocverter — Turn any file into the one you need</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -28,7 +28,8 @@
       <a href="#trust">Why us</a>
       <a href="#say">Notes</a>
     </nav>
-    <a class="btn btn-ghost" href="#tools">Open a file →</a>
+    <button class="btn btn-ghost" id="openFileBtn" type="button">Open a file →</button>
+    <input type="file" id="quickOpenInput" hidden>
   </div>
 </header>
 
@@ -38,13 +39,13 @@
   <section class="hero wrap">
     <div class="hero-copy">
       <h1>Turn any file<br> into the one<br> you <em>actually</em> need.</h1>
-      <p class="lede">Merge, convert, compress, sign — thirty-one small tools that behave like one good habit. No account, no watermark, nothing left behind on our shelves.</p>
+      <p class="lede">Merge, convert, compress, sign — thirty-one small tools that behave like one good habit. Everything runs right in your browser: no upload to a server, no account, nothing left behind.</p>
       <div class="hero-actions">
         <a href="#tools" class="btn btn-primary">Browse the tools</a>
         <a href="#folio" class="btn btn-text">See the whole folio ↓</a>
       </div>
       <dl class="hero-stats">
-        <div><dt>31</dt><dd>tools on the desk</dd></div>
+        <div><dt>20</dt><dd>tools on the desk</dd></div>
         <div><dt>0¢</dt><dd>cost, always</dd></div>
         <div><dt>&lt;60s</dt><dd>avg. turnaround</dd></div>
       </dl>
@@ -69,46 +70,46 @@
       </div>
 
       <div class="card-grid">
-        <article class="tool-card">
+        <article class="tool-card" data-tool="merge" tabindex="0" role="button">
           <span class="dogear" aria-hidden="true"></span>
           <span class="tool-glyph">⇄</span>
           <h3>Merge PDFs</h3>
-          <p>Drop in as many files as you like, drag to reorder, out comes one.</p>
+          <p>Drop in as many files as you like, in the order you choose, out comes one.</p>
           <span class="tool-target">→ .pdf</span>
         </article>
-        <article class="tool-card">
+        <article class="tool-card" data-tool="split" tabindex="0" role="button">
           <span class="dogear" aria-hidden="true"></span>
           <span class="tool-glyph">✂</span>
           <h3>Split a PDF</h3>
           <p>Pull specific pages out, or cut a long file into even chapters.</p>
           <span class="tool-target">→ .pdf ×n</span>
         </article>
-        <article class="tool-card">
+        <article class="tool-card" data-tool="compress" tabindex="0" role="button">
           <span class="dogear" aria-hidden="true"></span>
           <span class="tool-glyph">↓</span>
           <h3>Compress a PDF</h3>
           <p>Shrink the file size for email limits, keep the pages legible.</p>
           <span class="tool-target">→ .pdf</span>
         </article>
-        <article class="tool-card">
-          <span class="dogear" aria-hidden="true"></span>
+        <article class="tool-card" data-tool="pdf2word" tabindex="0" role="button">
           <span class="tool-glyph">W</span>
+          <span class="dogear" aria-hidden="true"></span>
           <h3>PDF to Word</h3>
-          <p>Get back an editable .docx, formatting and layout intact.</p>
-          <span class="tool-target">→ .docx</span>
+          <p>Get the text back out into an editable Word-compatible file.</p>
+          <span class="tool-target">→ .doc</span>
         </article>
-        <article class="tool-card">
+        <article class="tool-card" data-tool="edit" tabindex="0" role="button">
           <span class="dogear" aria-hidden="true"></span>
           <span class="tool-glyph">✎</span>
           <h3>Edit a PDF</h3>
-          <p>Fix a typo, drop in an image, adjust a line — right in the page.</p>
+          <p>Stamp in a line of text exactly where a page needs it.</p>
           <span class="tool-target">→ .pdf</span>
         </article>
-        <article class="tool-card">
+        <article class="tool-card" data-tool="sign" tabindex="0" role="button">
           <span class="dogear" aria-hidden="true"></span>
           <span class="tool-glyph">✒</span>
           <h3>Sign a PDF</h3>
-          <p>Draw, type, or upload a signature and place it where it's needed.</p>
+          <p>Draw a signature and place it right on the page.</p>
           <span class="tool-target">→ .pdf</span>
         </article>
       </div>
@@ -133,35 +134,35 @@
 
         <div class="tab-panels">
           <ul class="tool-list is-active" data-panel="editing">
-            <li><span>Merge PDF</span><small>Combine, in the order you choose</small></li>
-            <li><span>Split PDF</span><small>Pull pages, or cut evenly</small></li>
-            <li><span>Organize PDF</span><small>Reorder, delete, rearrange pages</small></li>
-            <li><span>Compress PDF</span><small>Smaller file, same pages</small></li>
+            <li data-tool="merge" tabindex="0" role="button"><span>Merge PDF</span><small>Combine, in the order you choose</small></li>
+            <li data-tool="split" tabindex="0" role="button"><span>Split PDF</span><small>Pull pages, or cut evenly</small></li>
+            <li data-tool="organize" tabindex="0" role="button"><span>Organize PDF</span><small>Reorder, delete, rearrange pages</small></li>
+            <li data-tool="compress" tabindex="0" role="button"><span>Compress PDF</span><small>Smaller file, same pages</small></li>
           </ul>
           <ul class="tool-list" data-panel="conversion">
-            <li><span>PDF to Word</span><small>Editable .docx, layout intact</small></li>
-            <li><span>Word to PDF</span><small>Locks the layout in place</small></li>
-            <li><span>PDF to Excel</span><small>Pulls tables into .xlsx</small></li>
-            <li><span>PDF to PowerPoint</span><small>Each page becomes a slide</small></li>
-            <li><span>PDF to JPG</span><small>One image per page</small></li>
-            <li><span>JPG to PDF</span><small>Stack images into one file</small></li>
+            <li data-tool="pdf2word" tabindex="0" role="button"><span>PDF to Word</span><small>Editable .doc, text preserved</small></li>
+            <li data-tool="word2pdf" tabindex="0" role="button"><span>Word to PDF</span><small>Locks the layout in place</small></li>
+            <li data-tool="pdf2excel" tabindex="0" role="button"><span>PDF to Excel</span><small>Pulls text into .xlsx rows</small></li>
+            <li data-tool="pdf2ppt" tabindex="0" role="button"><span>PDF to PowerPoint</span><small>Each page becomes a slide</small></li>
+            <li data-tool="pdf2jpg" tabindex="0" role="button"><span>PDF to JPG</span><small>One image per page</small></li>
+            <li data-tool="jpg2pdf" tabindex="0" role="button"><span>JPG to PDF</span><small>Stack images into one file</small></li>
           </ul>
           <ul class="tool-list" data-panel="security">
-            <li><span>Protect PDF</span><small>Lock a file to specific eyes</small></li>
-            <li><span>Unlock PDF</span><small>Remove a password you have rights to</small></li>
-            <li><span>Sign PDF</span><small>A signature, placed precisely</small></li>
-            <li><span>Watermark PDF</span><small>Text or image, tiled or centered</small></li>
+            <li data-tool="protect" tabindex="0" role="button"><span>Protect PDF</span><small>Password-gate a file for sharing</small></li>
+            <li data-tool="unlock" tabindex="0" role="button"><span>Unlock PDF</span><small>Remove restrictions you have rights to</small></li>
+            <li data-tool="sign" tabindex="0" role="button"><span>Sign PDF</span><small>A signature, placed precisely</small></li>
+            <li data-tool="watermark" tabindex="0" role="button"><span>Watermark PDF</span><small>Diagonal text across every page</small></li>
           </ul>
           <ul class="tool-list" data-panel="optimization">
-            <li><span>Compress PDF</span><small>Shrink for email limits</small></li>
-            <li><span>OCR PDF</span><small>Turns scans into selectable text</small></li>
-            <li><span>Repair PDF</span><small>Rescues corrupted files</small></li>
+            <li data-tool="compress" tabindex="0" role="button"><span>Compress PDF</span><small>Shrink for email limits</small></li>
+            <li data-tool="ocr" tabindex="0" role="button"><span>OCR PDF</span><small>Pulls out the text layer</small></li>
+            <li data-tool="repair" tabindex="0" role="button"><span>Repair PDF</span><small>Rescues corrupted files</small></li>
           </ul>
           <ul class="tool-list" data-panel="other">
-            <li><span>Edit PDF</span><small>Fix text or drop in an image</small></li>
-            <li><span>Rotate PDF</span><small>Fix sideways scans</small></li>
-            <li><span>Number Pages</span><small>Add running page numbers</small></li>
-            <li><span>Compare PDFs</span><small>Highlights what changed</small></li>
+            <li data-tool="edit" tabindex="0" role="button"><span>Edit PDF</span><small>Stamp in text where it's needed</small></li>
+            <li data-tool="rotate" tabindex="0" role="button"><span>Rotate PDF</span><small>Fix sideways scans</small></li>
+            <li data-tool="numberpages" tabindex="0" role="button"><span>Number Pages</span><small>Add running page numbers</small></li>
+            <li data-tool="compare" tabindex="0" role="button"><span>Compare PDFs</span><small>Highlights what changed</small></li>
           </ul>
         </div>
       </div>
@@ -173,20 +174,20 @@
     <div class="wrap trust-grid">
       <div class="trust-copy">
         <h2>Why Choose MyDocverter</h2>
-        <p class="lede">We built this because most PDF tools are a login wall wearing a free badge. Ours is the opposite: everything runs, then everything is forgotten.</p>
+        <p class="lede">Every tool here runs locally in your browser. Your files never leave your device, so there's nothing to upload, store, or clean up afterward.</p>
       </div>
       <dl class="ledger">
         <div class="ledger-row">
-          <dt>01</dt><dd class="ledger-label">Files auto-deleted</dd><dd class="ledger-val">after 1 hour</dd>
+          <dt>01</dt><dd class="ledger-label">Files uploaded to a server</dd><dd class="ledger-val">none</dd>
         </div>
         <div class="ledger-row">
           <dt>02</dt><dd class="ledger-label">Accounts required</dd><dd class="ledger-val">none</dd>
         </div>
         <div class="ledger-row">
-          <dt>03</dt><dd class="ledger-label">Tools behind a paywall</dd><dd class="ledger-val">zero of 31</dd>
+          <dt>03</dt><dd class="ledger-label">Tools behind a paywall</dd><dd class="ledger-val">zero of 20</dd>
         </div>
         <div class="ledger-row">
-          <dt>04</dt><dd class="ledger-label">Connection</dd><dd class="ledger-val">encrypted, always</dd>
+          <dt>04</dt><dd class="ledger-label">Where the processing happens</dd><dd class="ledger-val">your device</dd>
         </div>
       </dl>
     </div>
@@ -204,7 +205,7 @@
           <figcaption>Sarah Johnson <span>— Marketing Director</span></figcaption>
         </figure>
         <figure class="note-card">
-          <blockquote>"The OCR tool turned three years of scanned lecture notes into searchable text in an afternoon."</blockquote>
+          <blockquote>"Being able to see it's all happening in my own browser tab, no upload bar crawling along, actually changed how much I trust it."</blockquote>
           <figcaption>Michael Chen <span>— Graduate Student</span></figcaption>
         </figure>
         <figure class="note-card">
@@ -214,6 +215,56 @@
       </div>
     </div>
   </section>
+
+
+  <div class="tool-card" data-tool="merge">
+    <div class="tool-icon">⇄</div>
+    <h3>Merge PDFs</h3>
+    <p>Drop in as many files as you like, in the order you choose, out comes one.</p>
+    <span>→ .pdf</span>
+</div>
+
+<div class="tool-card" data-tool="split">
+    <div class="tool-icon">✂</div>
+    <h3>Split a PDF</h3>
+    <p>Pull specific pages out, or cut a long file into even chapters.</p>
+    <span>→ .pdf ×n</span>
+</div>
+
+<div class="tool-card" data-tool="compress">
+    <div class="tool-icon">↓</div>
+    <h3>Compress a PDF</h3>
+    <p>Shrink the file size for email limits, keep the pages legible.</p>
+    <span>→ .pdf</span>
+</div>
+
+<div class="tool-card" data-tool="pdf-to-word">
+    <div class="tool-icon">W</div>
+    <h3>PDF to Word</h3>
+    <p>Get the text back out into an editable Word-compatible file.</p>
+    <span>→ .docx</span>
+</div>
+
+<div class="tool-card" data-tool="edit">
+    <div class="tool-icon">✎</div>
+    <h3>Edit a PDF</h3>
+    <p>Add text to a PDF page exactly where you need it.</p>
+    <span>→ .pdf</span>
+</div>
+
+<div class="tool-card" data-tool="sign">
+    <div class="tool-icon">▰</div>
+    <h3>Sign a PDF</h3>
+    <p>Draw a signature and place it right on the page.</p>
+    <span>→ .pdf</span>
+</div>
+
+<div class="tool-card" data-tool="word-to-pdf">
+    <div class="tool-icon">D</div>
+    <h3>Word to PDF</h3>
+    <p>Convert your Word document into a PDF file.</p>
+    <span>→ .pdf</span>
+</div>
 
   <!-- CTA -->
   <section class="cta wrap">
@@ -231,9 +282,9 @@
     </div>
     <div>
       <h4>Tools</h4>
-      <a href="#tools">Merge PDF</a>
-      <a href="#tools">Split PDF</a>
-      <a href="#tools">Compress PDF</a>
+      <a href="#" data-tool="merge">Merge PDF</a>
+      <a href="#" data-tool="split">Split PDF</a>
+      <a href="#" data-tool="compress">Compress PDF</a>
       <a href="#folio">All Features</a>
     </div>
     <div>
@@ -250,9 +301,28 @@
     </div>
   </div>
   <div class="wrap footer-bottom">
-    <span>© 2026 MyDocverter. Every file, filed and forgotten.</span>
+    <span>© 2026 MyDocverter. Processed on your device, never on ours.</span>
   </div>
 </footer>
+
+<!-- Tool modal -->
+<div class="modal-overlay" id="modalOverlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" type="button" aria-label="Close">×</button>
+    <h3 id="modalTitle"></h3>
+    <p class="modal-desc" id="modalDesc"></p>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<!-- Libraries that do the real work, all client-side -->
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://unpkg.com/mammoth@1.6.0/mammoth.browser.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://unpkg.com/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <script src="script.js"></script>
 </body>

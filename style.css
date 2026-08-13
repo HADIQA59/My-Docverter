@@ -1,4 +1,4 @@
-/* Foldwell - main stylesheet */
+/* Foldwell / MyDocverter - main stylesheet */
 
 /* -------- Colors & fonts -------- */
 :root {
@@ -98,10 +98,12 @@ h2 {
   gap: 8px;
   padding: 12px 22px;
   border-radius: 3px;
+  font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.95rem;
   border: 1.5px solid transparent;
   transition: 0.15s ease;
+  cursor: pointer;
 }
 
 .btn-primary {
@@ -115,6 +117,7 @@ h2 {
 }
 
 .btn-ghost {
+  background: none;
   border-color: var(--line);
   color: var(--ink);
   padding: 9px 18px;
@@ -130,6 +133,7 @@ h2 {
   padding: 12px 0;
   color: var(--ink-soft);
   font-weight: 600;
+  background: none;
 }
 
 .btn-text:hover {
@@ -139,6 +143,18 @@ h2 {
 .btn-lg {
   padding: 16px 30px;
   font-size: 1.05rem;
+}
+
+.btn-block {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
 }
 
 /* -------- Header -------- */
@@ -345,11 +361,18 @@ h2 {
   padding: 28px 26px 24px;
   overflow: hidden;
   transition: 0.18s ease;
+  cursor: pointer;
 }
 
-.tool-card:hover {
+.tool-card:hover,
+.tool-card:focus-visible {
   transform: translateY(-4px);
   border-color: rgba(30, 28, 24, 0.3);
+}
+
+.tool-card:focus-visible {
+  outline: 2px solid var(--stamp);
+  outline-offset: 2px;
 }
 
 .dogear {
@@ -455,6 +478,16 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  cursor: pointer;
+}
+
+.tool-list li:hover {
+  background: var(--paper);
+}
+
+.tool-list li:focus-visible {
+  outline: 2px solid var(--stamp);
+  outline-offset: -2px;
 }
 
 .tool-list li:nth-child(4n) {
@@ -626,6 +659,7 @@ h2 {
   color: rgba(237, 232, 220, 0.82);
   font-size: 0.92rem;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .site-footer a:hover {
@@ -636,6 +670,165 @@ h2 {
   padding: 22px 32px;
   font-size: 0.8rem;
   color: rgba(237, 232, 220, 0.45);
+}
+
+/* ============================================================
+   Tool modal + in-modal forms
+   ============================================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 19, 16, 0.55);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 60px 20px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.modal-overlay[hidden] {
+  display: none;
+}
+
+.modal {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  max-width: 560px;
+  width: 100%;
+  padding: 34px 30px 28px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--ink-faint);
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.modal-close:hover {
+  color: var(--ink);
+}
+
+.modal h3 {
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+  padding-right: 20px;
+}
+
+.modal-desc {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  margin: 0 0 22px;
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.field label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+
+.field input[type="text"],
+.field input[type="number"],
+.field input[type="password"],
+.field select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: #fff;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--ink);
+}
+
+.field input[type="file"] {
+  width: 100%;
+  font-size: 0.85rem;
+  padding: 8px 0;
+}
+
+.field-hint {
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  margin-top: 4px;
+}
+
+.status {
+  margin-top: 14px;
+  font-size: 0.88rem;
+  min-height: 1.2em;
+}
+
+.status.info {
+  color: var(--ink-soft);
+}
+
+.status.ok {
+  color: var(--sage);
+  font-weight: 600;
+}
+
+.status.err {
+  color: var(--stamp);
+  font-weight: 600;
+}
+
+.output {
+  margin-top: 10px;
+}
+
+.sig-pad {
+  border: 1px dashed var(--line);
+  border-radius: 3px;
+  background: #fff;
+  touch-action: none;
+  cursor: crosshair;
+  width: 100%;
+  height: 160px;
+}
+
+.compare-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.diff-box {
+  max-height: 260px;
+  overflow-y: auto;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 14px;
+  background: #fff;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-top: 14px;
+}
+
+.diff-box ins {
+  background: #dcead5;
+  color: var(--sage);
+  text-decoration: none;
+}
+
+.diff-box del {
+  background: #f3d9d4;
+  color: var(--stamp);
 }
 
 /* -------- Responsive -------- */
@@ -687,5 +880,11 @@ h2 {
   }
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+  .compare-cols {
+    grid-template-columns: 1fr;
+  }
+  .modal {
+    padding: 28px 20px 22px;
   }
 }
