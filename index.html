@@ -315,6 +315,75 @@
   </div>
 </div>
 
+<!-- TOOL MODAL -->
+<div id="toolModal" class="tool-modal">
+
+    <div class="tool-modal-box">
+
+        <button class="close-modal" id="closeModal">&times;</button>
+
+        <div class="modal-header">
+            <div class="modal-icon" id="modalIcon">⇄</div>
+
+            <div>
+                <h2 id="modalTitle">Merge PDFs</h2>
+                <p id="modalDescription">
+                    Select multiple PDF files to merge.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- UPLOAD AREA -->
+        <div class="upload-area" id="uploadArea">
+
+            <div class="upload-icon">↑</div>
+
+            <h3>Drop your files here</h3>
+
+            <p>or</p>
+
+            <button class="choose-btn" id="chooseFiles">
+                Choose Files
+            </button>
+
+            <input
+                type="file"
+                id="fileInput"
+                hidden
+            >
+
+            <small id="fileHint">
+                PDF files only
+            </small>
+
+        </div>
+
+
+        <!-- SELECTED FILES -->
+        <div id="fileList" class="file-list"></div>
+
+
+        <!-- OPTIONS -->
+        <div id="toolOptions" class="tool-options"></div>
+
+
+        <!-- ACTION -->
+        <button
+            id="processBtn"
+            class="process-btn"
+            disabled
+        >
+            Process Files
+        </button>
+
+
+        <!-- STATUS -->
+        <div id="toolStatus" class="tool-status"></div>
+
+    </div>
+
+</div>
 <!-- Libraries that do the real work, all client-side -->
 <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
