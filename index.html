@@ -201,70 +201,23 @@
       </div>
       <div class="note-grid">
         <figure class="note-card">
+          <span class="stamp-mini">VERIFIED</span>
           <blockquote>"I merge contracts every week. This is the first tool that keeps the page order exactly as I dropped them."</blockquote>
           <figcaption>Sarah Johnson <span>— Marketing Director</span></figcaption>
         </figure>
         <figure class="note-card">
+          <span class="stamp-mini">VERIFIED</span>
           <blockquote>"Being able to see it's all happening in my own browser tab, no upload bar crawling along, actually changed how much I trust it."</blockquote>
           <figcaption>Michael Chen <span>— Graduate Student</span></figcaption>
         </figure>
         <figure class="note-card">
+          <span class="stamp-mini">VERIFIED</span>
           <blockquote>"No sign-up, no popup asking for my email halfway through. It just did the thing and let me leave."</blockquote>
           <figcaption>Priya Nair <span>— Freelance Editor</span></figcaption>
         </figure>
       </div>
     </div>
   </section>
-
-
-  <div class="tool-card" data-tool="merge">
-    <div class="tool-icon">⇄</div>
-    <h3>Merge PDFs</h3>
-    <p>Drop in as many files as you like, in the order you choose, out comes one.</p>
-    <span>→ .pdf</span>
-</div>
-
-<div class="tool-card" data-tool="split">
-    <div class="tool-icon">✂</div>
-    <h3>Split a PDF</h3>
-    <p>Pull specific pages out, or cut a long file into even chapters.</p>
-    <span>→ .pdf ×n</span>
-</div>
-
-<div class="tool-card" data-tool="compress">
-    <div class="tool-icon">↓</div>
-    <h3>Compress a PDF</h3>
-    <p>Shrink the file size for email limits, keep the pages legible.</p>
-    <span>→ .pdf</span>
-</div>
-
-<div class="tool-card" data-tool="pdf-to-word">
-    <div class="tool-icon">W</div>
-    <h3>PDF to Word</h3>
-    <p>Get the text back out into an editable Word-compatible file.</p>
-    <span>→ .docx</span>
-</div>
-
-<div class="tool-card" data-tool="edit">
-    <div class="tool-icon">✎</div>
-    <h3>Edit a PDF</h3>
-    <p>Add text to a PDF page exactly where you need it.</p>
-    <span>→ .pdf</span>
-</div>
-
-<div class="tool-card" data-tool="sign">
-    <div class="tool-icon">▰</div>
-    <h3>Sign a PDF</h3>
-    <p>Draw a signature and place it right on the page.</p>
-    <span>→ .pdf</span>
-</div>
-
-<div class="tool-card" data-tool="word-to-pdf">
-    <div class="tool-icon">D</div>
-    <h3>Word to PDF</h3>
-    <p>Convert your Word document into a PDF file.</p>
-    <span>→ .pdf</span>
-</div>
 
   <!-- CTA -->
   <section class="cta wrap">
@@ -315,75 +268,6 @@
   </div>
 </div>
 
-<!-- TOOL MODAL -->
-<div id="toolModal" class="tool-modal">
-
-    <div class="tool-modal-box">
-
-        <button class="close-modal" id="closeModal">&times;</button>
-
-        <div class="modal-header">
-            <div class="modal-icon" id="modalIcon">⇄</div>
-
-            <div>
-                <h2 id="modalTitle">Merge PDFs</h2>
-                <p id="modalDescription">
-                    Select multiple PDF files to merge.
-                </p>
-            </div>
-        </div>
-
-
-        <!-- UPLOAD AREA -->
-        <div class="upload-area" id="uploadArea">
-
-            <div class="upload-icon">↑</div>
-
-            <h3>Drop your files here</h3>
-
-            <p>or</p>
-
-            <button class="choose-btn" id="chooseFiles">
-                Choose Files
-            </button>
-
-            <input
-                type="file"
-                id="fileInput"
-                hidden
-            >
-
-            <small id="fileHint">
-                PDF files only
-            </small>
-
-        </div>
-
-
-        <!-- SELECTED FILES -->
-        <div id="fileList" class="file-list"></div>
-
-
-        <!-- OPTIONS -->
-        <div id="toolOptions" class="tool-options"></div>
-
-
-        <!-- ACTION -->
-        <button
-            id="processBtn"
-            class="process-btn"
-            disabled
-        >
-            Process Files
-        </button>
-
-
-        <!-- STATUS -->
-        <div id="toolStatus" class="tool-status"></div>
-
-    </div>
-
-</div>
 <!-- Libraries that do the real work, all client-side -->
 <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
