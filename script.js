@@ -4,31 +4,34 @@
    Nothing here uploads a file anywhere — pdf-lib, pdf.js,
    mammoth, SheetJS and PptxGenJS all run locally in the tab.
    ============================================================ */
+/* ---------- Category / Folio tab switcher ---------- */
+const tabs = document.querySelectorAll('.folio-tabs .tab');
+const panels = document.querySelectorAll('.tab-panels .tool-list');
 
-document.addEventListener('DOMContentLoaded', () => {
-
-  /* ---------- Folio tab switcher ---------- */
-  const tabs = document.querySelectorAll('.tab');
-  const panels = document.querySelectorAll('.tool-list');
-
-  tabs.forEach(tab => {
+tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      const target = tab.dataset.tab;
-      tabs.forEach(t => {
-        t.classList.remove('is-active');
-        t.setAttribute('aria-selected', 'false');
-      });
-      tab.classList.add('is-active');
-      tab.setAttribute('aria-selected', 'true');
-      panels.forEach(p => p.classList.toggle('is-active', p.dataset.panel === target));
+
+        const target = tab.dataset.tab;
+
+        // Remove active from all category buttons
+        tabs.forEach(t => {
+            t.classList.remove('is-active');
+            t.setAttribute('aria-selected', 'false');
+        });
+
+        // Activate clicked category
+        tab.classList.add('is-active');
+        tab.setAttribute('aria-selected', 'true');
+
+        // Show only selected category list
+        panels.forEach(panel => {
+            panel.classList.toggle(
+                'is-active',
+                panel.dataset.panel === target
+            );
+        });
     });
-    tab.addEventListener('keydown', (e) => {
-      const list = Array.from(tabs);
-      const i = list.indexOf(tab);
-      if (e.key === 'ArrowRight') list[(i + 1) % list.length].focus();
-      if (e.key === 'ArrowLeft') list[(i - 1 + list.length) % list.length].focus();
-    });
-  });
+});
 
   /* pdf.js needs a worker file to run */
   if (window.pdfjsLib) {
@@ -965,8 +968,6 @@ document.getElementById('go').addEventListener('click', async () => {
     if (!el) return;
     e.preventDefault();
     openTool(el.dataset.tool);
-  });
-
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'Enter' && e.key !== ' ') return;
     const el = e.target.closest('[data-tool][role="button"]');
@@ -990,12 +991,12 @@ document.getElementById('go').addEventListener('click', async () => {
       openModal('What would you like to do?', 'Pick a tool for this PDF — it\u2019ll already be loaded in.');
       modalBody.innerHTML = `
         <div class="card-grid" style="grid-template-columns:repeat(2,1fr);">
-          <article class="tool-card" data-tool="compress" tabindex="0" role="button"><h3>Compress</h3></article>
-          <article class="tool-card" data-tool="pdf2word" tabindex="0" role="button"><h3>To Word</h3></article>
-          <article class="tool-card" data-tool="pdf2jpg" tabindex="0" role="button"><h3>To JPG</h3></article>
-          <article class="tool-card" data-tool="sign" tabindex="0" role="button"><h3>Sign</h3></article>
-          <article class="tool-card" data-tool="watermark" tabindex="0" role="button"><h3>Watermark</h3></article>
-          <article class="tool-card" data-tool="split" tabindex="0" role="button"><h3>Split</h3></article>
+          <div class="tool-card" data-tool="compress" tabindex="0" role="button" style="--icon-color:#16a085"><div class="tool-glyph"><i class="fa-solid fa-compress"></i></div><h3>Compress</h3></div>
+          <div class="tool-card" data-tool="pdf2word" tabindex="0" role="button" style="--icon-color:#2b579a"><div class="tool-glyph"><i class="fa-solid fa-file-word"></i></div><h3>To Word</h3></div>
+          <div class="tool-card" data-tool="pdf2jpg" tabindex="0" role="button" style="--icon-color:#d24aa8"><div class="tool-glyph"><i class="fa-solid fa-file-image"></i></div><h3>To JPG</h3></div>
+          <div class="tool-card" data-tool="sign" tabindex="0" role="button" style="--icon-color:#6c5ce7"><div class="tool-glyph"><i class="fa-solid fa-signature"></i></div><h3>Sign</h3></div>
+          <div class="tool-card" data-tool="watermark" tabindex="0" role="button" style="--icon-color:#5b6b7c"><div class="tool-glyph"><i class="fa-solid fa-droplet"></i></div><h3>Watermark</h3></div>
+          <div class="tool-card" data-tool="split" tabindex="0" role="button" style="--icon-color:#19a9df"><div class="tool-glyph"><i class="fa-solid fa-scissors"></i></div><h3>Split</h3></div>
         </div>`;
     } else if (name.endsWith('.docx') || name.endsWith('.doc')) {
       openTool('word2pdf');

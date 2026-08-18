@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MyDocverter — Turn any file into the one you need</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -39,7 +41,7 @@
   <section class="hero wrap">
     <div class="hero-copy">
       <h1>Turn any file<br> into the one<br> you <em>actually</em> need.</h1>
-      <p class="lede">Merge, convert, compress, sign — thirty-one small tools that behave like one good habit. Everything runs right in your browser: no upload to a server, no account, nothing left behind.</p>
+      <p class="lede">Merge, convert, compress, sign — twenty small tools that behave like one good habit. Everything runs right in your browser: no upload to a server, no account, nothing left behind.</p>
       <div class="hero-actions">
         <a href="#tools" class="btn btn-primary">Browse the tools</a>
         <a href="#folio" class="btn btn-text">See the whole folio ↓</a>
@@ -70,48 +72,30 @@
       </div>
 
       <div class="card-grid">
-        <article class="tool-card" data-tool="merge" tabindex="0" role="button">
-          <span class="dogear" aria-hidden="true"></span>
-          <span class="tool-glyph">⇄</span>
-          <h3>Merge PDFs</h3>
-          <p>Drop in as many files as you like, in the order you choose, out comes one.</p>
-          <span class="tool-target">→ .pdf</span>
-        </article>
-        <article class="tool-card" data-tool="split" tabindex="0" role="button">
-          <span class="dogear" aria-hidden="true"></span>
-          <span class="tool-glyph">✂</span>
-          <h3>Split a PDF</h3>
-          <p>Pull specific pages out, or cut a long file into even chapters.</p>
-          <span class="tool-target">→ .pdf ×n</span>
-        </article>
-        <article class="tool-card" data-tool="compress" tabindex="0" role="button">
-          <span class="dogear" aria-hidden="true"></span>
-          <span class="tool-glyph">↓</span>
-          <h3>Compress a PDF</h3>
-          <p>Shrink the file size for email limits, keep the pages legible.</p>
-          <span class="tool-target">→ .pdf</span>
-        </article>
-        <article class="tool-card" data-tool="pdf2word" tabindex="0" role="button">
-          <span class="tool-glyph">W</span>
-          <span class="dogear" aria-hidden="true"></span>
+        <div class="tool-card" data-tool="merge" tabindex="0" role="button" style="--icon-color:#16b88a">
+          <div class="tool-glyph"><i class="fa-solid fa-copy"></i></div>
+          <h3>Merge PDF</h3>
+        </div>
+        <div class="tool-card" data-tool="split" tabindex="0" role="button" style="--icon-color:#19a9df">
+          <div class="tool-glyph"><i class="fa-solid fa-scissors"></i></div>
+          <h3>Split PDF</h3>
+        </div>
+        <div class="tool-card" data-tool="compress" tabindex="0" role="button" style="--icon-color:#16a085">
+          <div class="tool-glyph"><i class="fa-solid fa-compress"></i></div>
+          <h3>Compress PDF</h3>
+        </div>
+        <div class="tool-card" data-tool="pdf2word" tabindex="0" role="button" style="--icon-color:#2b579a">
+          <div class="tool-glyph"><i class="fa-solid fa-file-word"></i></div>
           <h3>PDF to Word</h3>
-          <p>Get the text back out into an editable Word-compatible file.</p>
-          <span class="tool-target">→ .doc</span>
-        </article>
-        <article class="tool-card" data-tool="edit" tabindex="0" role="button">
-          <span class="dogear" aria-hidden="true"></span>
-          <span class="tool-glyph">✎</span>
-          <h3>Edit a PDF</h3>
-          <p>Stamp in a line of text exactly where a page needs it.</p>
-          <span class="tool-target">→ .pdf</span>
-        </article>
-        <article class="tool-card" data-tool="sign" tabindex="0" role="button">
-          <span class="dogear" aria-hidden="true"></span>
-          <span class="tool-glyph">✒</span>
-          <h3>Sign a PDF</h3>
-          <p>Draw a signature and place it right on the page.</p>
-          <span class="tool-target">→ .pdf</span>
-        </article>
+        </div>
+        <div class="tool-card" data-tool="edit" tabindex="0" role="button" style="--icon-color:#c9584a">
+          <div class="tool-glyph"><i class="fa-solid fa-pen-to-square"></i></div>
+          <h3>Edit PDF</h3>
+        </div>
+        <div class="tool-card" data-tool="sign" tabindex="0" role="button" style="--icon-color:#6c5ce7">
+          <div class="tool-glyph"><i class="fa-solid fa-signature"></i></div>
+          <h3>Sign PDF</h3>
+        </div>
       </div>
     </div>
   </section>
@@ -123,48 +107,131 @@
         <h2>Every tool, filed by what it does</h2>
       </div>
 
-      <div class="folio">
-        <div class="tabs" role="tablist" aria-label="Tool categories">
-          <button class="tab is-active" role="tab" aria-selected="true" data-tab="editing">PDF Editing</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="conversion">PDF Conversion</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="security">PDF Security</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="optimization">PDF Optimization</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="other">Other Tools</button>
+      <div class="folio-tabs" role="tablist">
+        <button class="tab is-active" role="tab" aria-selected="true" data-tab="editing">
+          <i class="fa-solid fa-pen-to-square"></i>
+          <span>PDF Editing</span>
+        </button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="conversion">
+          <i class="fa-solid fa-arrows-rotate"></i>
+          <span>PDF Conversion</span>
+        </button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="security">
+          <i class="fa-solid fa-lock"></i>
+          <span>PDF Security</span>
+        </button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="optimization">
+          <i class="fa-solid fa-compress"></i>
+          <span>PDF Optimization</span>
+        </button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="other">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+          <span>Other Tools</span>
+        </button>
+      </div>
+
+      <div class="tab-panels">
+
+        <!-- Editing: structural tools -->
+        <div class="tool-list card-grid is-active" data-panel="editing">
+          <div class="tool-card" data-tool="merge" tabindex="0" role="button" style="--icon-color:#16b88a">
+            <div class="tool-glyph"><i class="fa-solid fa-copy"></i></div>
+            <h3>Merge PDF</h3>
+          </div>
+          <div class="tool-card" data-tool="split" tabindex="0" role="button" style="--icon-color:#19a9df">
+            <div class="tool-glyph"><i class="fa-solid fa-scissors"></i></div>
+            <h3>Split PDF</h3>
+          </div>
+          <div class="tool-card" data-tool="organize" tabindex="0" role="button" style="--icon-color:#f5a000">
+            <div class="tool-glyph"><i class="fa-solid fa-folder-tree"></i></div>
+            <h3>Organize PDF</h3>
+          </div>
         </div>
 
-        <div class="tab-panels">
-          <ul class="tool-list is-active" data-panel="editing">
-            <li data-tool="merge" tabindex="0" role="button"><span>Merge PDF</span><small>Combine, in the order you choose</small></li>
-            <li data-tool="split" tabindex="0" role="button"><span>Split PDF</span><small>Pull pages, or cut evenly</small></li>
-            <li data-tool="organize" tabindex="0" role="button"><span>Organize PDF</span><small>Reorder, delete, rearrange pages</small></li>
-            <li data-tool="compress" tabindex="0" role="button"><span>Compress PDF</span><small>Smaller file, same pages</small></li>
-          </ul>
-          <ul class="tool-list" data-panel="conversion">
-            <li data-tool="pdf2word" tabindex="0" role="button"><span>PDF to Word</span><small>Editable .doc, text preserved</small></li>
-            <li data-tool="word2pdf" tabindex="0" role="button"><span>Word to PDF</span><small>Locks the layout in place</small></li>
-            <li data-tool="pdf2excel" tabindex="0" role="button"><span>PDF to Excel</span><small>Pulls text into .xlsx rows</small></li>
-            <li data-tool="pdf2ppt" tabindex="0" role="button"><span>PDF to PowerPoint</span><small>Each page becomes a slide</small></li>
-            <li data-tool="pdf2jpg" tabindex="0" role="button"><span>PDF to JPG</span><small>One image per page</small></li>
-            <li data-tool="jpg2pdf" tabindex="0" role="button"><span>JPG to PDF</span><small>Stack images into one file</small></li>
-          </ul>
-          <ul class="tool-list" data-panel="security">
-            <li data-tool="protect" tabindex="0" role="button"><span>Protect PDF</span><small>Password-gate a file for sharing</small></li>
-            <li data-tool="unlock" tabindex="0" role="button"><span>Unlock PDF</span><small>Remove restrictions you have rights to</small></li>
-            <li data-tool="sign" tabindex="0" role="button"><span>Sign PDF</span><small>A signature, placed precisely</small></li>
-            <li data-tool="watermark" tabindex="0" role="button"><span>Watermark PDF</span><small>Diagonal text across every page</small></li>
-          </ul>
-          <ul class="tool-list" data-panel="optimization">
-            <li data-tool="compress" tabindex="0" role="button"><span>Compress PDF</span><small>Shrink for email limits</small></li>
-            <li data-tool="ocr" tabindex="0" role="button"><span>OCR PDF</span><small>Pulls out the text layer</small></li>
-            <li data-tool="repair" tabindex="0" role="button"><span>Repair PDF</span><small>Rescues corrupted files</small></li>
-          </ul>
-          <ul class="tool-list" data-panel="other">
-            <li data-tool="edit" tabindex="0" role="button"><span>Edit PDF</span><small>Stamp in text where it's needed</small></li>
-            <li data-tool="rotate" tabindex="0" role="button"><span>Rotate PDF</span><small>Fix sideways scans</small></li>
-            <li data-tool="numberpages" tabindex="0" role="button"><span>Number Pages</span><small>Add running page numbers</small></li>
-            <li data-tool="compare" tabindex="0" role="button"><span>Compare PDFs</span><small>Highlights what changed</small></li>
-          </ul>
+        <!-- Conversion -->
+        <div class="tool-list card-grid" data-panel="conversion">
+          <div class="tool-card" data-tool="pdf2word" tabindex="0" role="button" style="--icon-color:#2b579a">
+            <div class="tool-glyph"><i class="fa-solid fa-file-word"></i></div>
+            <h3>PDF to Word</h3>
+          </div>
+          <div class="tool-card" data-tool="word2pdf" tabindex="0" role="button" style="--icon-color:#b3392c">
+            <div class="tool-glyph"><i class="fa-solid fa-file-pdf"></i></div>
+            <h3>Word to PDF</h3>
+          </div>
+          <div class="tool-card" data-tool="pdf2excel" tabindex="0" role="button" style="--icon-color:#1d6f42">
+            <div class="tool-glyph"><i class="fa-solid fa-file-excel"></i></div>
+            <h3>PDF to Excel</h3>
+          </div>
+          <div class="tool-card" data-tool="pdf2ppt" tabindex="0" role="button" style="--icon-color:#d24726">
+            <div class="tool-glyph"><i class="fa-solid fa-file-powerpoint"></i></div>
+            <h3>PDF to PowerPoint</h3>
+          </div>
+          <div class="tool-card" data-tool="pdf2jpg" tabindex="0" role="button" style="--icon-color:#d24aa8">
+            <div class="tool-glyph"><i class="fa-solid fa-file-image"></i></div>
+            <h3>PDF to JPG</h3>
+          </div>
+          <div class="tool-card" data-tool="jpg2pdf" tabindex="0" role="button" style="--icon-color:#a83e2c">
+            <div class="tool-glyph"><i class="fa-solid fa-file-pdf"></i></div>
+            <h3>JPG to PDF</h3>
+          </div>
         </div>
+
+        <!-- Security -->
+        <div class="tool-list card-grid" data-panel="security">
+          <div class="tool-card" data-tool="protect" tabindex="0" role="button" style="--icon-color:#b3392c">
+            <div class="tool-glyph"><i class="fa-solid fa-lock"></i></div>
+            <h3>Protect PDF</h3>
+          </div>
+          <div class="tool-card" data-tool="unlock" tabindex="0" role="button" style="--icon-color:#0ea5a5">
+            <div class="tool-glyph"><i class="fa-solid fa-lock-open"></i></div>
+            <h3>Unlock PDF</h3>
+          </div>
+          <div class="tool-card" data-tool="sign" tabindex="0" role="button" style="--icon-color:#6c5ce7">
+            <div class="tool-glyph"><i class="fa-solid fa-signature"></i></div>
+            <h3>Sign PDF</h3>
+          </div>
+          <div class="tool-card" data-tool="watermark" tabindex="0" role="button" style="--icon-color:#5b6b7c">
+            <div class="tool-glyph"><i class="fa-solid fa-droplet"></i></div>
+            <h3>Watermark PDF</h3>
+          </div>
+        </div>
+
+        <!-- Optimization -->
+        <div class="tool-list card-grid" data-panel="optimization">
+          <div class="tool-card" data-tool="compress" tabindex="0" role="button" style="--icon-color:#16a085">
+            <div class="tool-glyph"><i class="fa-solid fa-compress"></i></div>
+            <h3>Compress PDF</h3>
+          </div>
+          <div class="tool-card" data-tool="ocr" tabindex="0" role="button" style="--icon-color:#8e44ad">
+            <div class="tool-glyph"><i class="fa-solid fa-text-height"></i></div>
+            <h3>OCR PDF</h3>
+          </div>
+          <div class="tool-card" data-tool="repair" tabindex="0" role="button" style="--icon-color:#e67e22">
+            <div class="tool-glyph"><i class="fa-solid fa-wrench"></i></div>
+            <h3>Repair PDF</h3>
+          </div>
+        </div>
+
+        <!-- Other -->
+        <div class="tool-list card-grid" data-panel="other">
+          <div class="tool-card" data-tool="edit" tabindex="0" role="button" style="--icon-color:#c9584a">
+            <div class="tool-glyph"><i class="fa-solid fa-pen-to-square"></i></div>
+            <h3>Edit PDF</h3>
+          </div>
+          <div class="tool-card" data-tool="rotate" tabindex="0" role="button" style="--icon-color:#3498db">
+            <div class="tool-glyph"><i class="fa-solid fa-rotate"></i></div>
+            <h3>Rotate PDF</h3>
+          </div>
+          <div class="tool-card" data-tool="numberpages" tabindex="0" role="button" style="--icon-color:#34495e">
+            <div class="tool-glyph"><i class="fa-solid fa-list-ol"></i></div>
+            <h3>Number Pages</h3>
+          </div>
+          <div class="tool-card" data-tool="compare" tabindex="0" role="button" style="--icon-color:#56624a">
+            <div class="tool-glyph"><i class="fa-solid fa-code-compare"></i></div>
+            <h3>Compare PDFs</h3>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -201,17 +268,14 @@
       </div>
       <div class="note-grid">
         <figure class="note-card">
-          <span class="stamp-mini">VERIFIED</span>
           <blockquote>"I merge contracts every week. This is the first tool that keeps the page order exactly as I dropped them."</blockquote>
           <figcaption>Sarah Johnson <span>— Marketing Director</span></figcaption>
         </figure>
         <figure class="note-card">
-          <span class="stamp-mini">VERIFIED</span>
           <blockquote>"Being able to see it's all happening in my own browser tab, no upload bar crawling along, actually changed how much I trust it."</blockquote>
           <figcaption>Michael Chen <span>— Graduate Student</span></figcaption>
         </figure>
         <figure class="note-card">
-          <span class="stamp-mini">VERIFIED</span>
           <blockquote>"No sign-up, no popup asking for my email halfway through. It just did the thing and let me leave."</blockquote>
           <figcaption>Priya Nair <span>— Freelance Editor</span></figcaption>
         </figure>
